@@ -96,20 +96,16 @@ async def vplay(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot) 
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
-            invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
-    except UserNotParticipant:
-        try:
-            invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
+                    invitelink = await c.export_chat_invite_link(chat_id)
+                except:
+                    await lel.edit(
+                        "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")
+                    return
+
+                try:
+                    await USER.join_chat(invitelink)
+                    await USER.send_message(
+                        message.chat.id, "** ɪᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴘʟᴀʏ 🖕 ...**")
         except UserAlreadyParticipant:
             pass
         except Exception as e:
@@ -119,7 +115,7 @@ async def vplay(c: Client, m: Message):
 
     if replied:
         if replied.video or replied.document:
-            loser = await replied.reply("❣️ **ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ...**")
+            loser = await replied.reply("📥**ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ...**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -162,7 +158,7 @@ async def vplay(c: Client, m: Message):
                 await m.reply_photo(
                     photo=image,
                     reply_markup=buttons,
-                    caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                    caption=f"**ɴᴇxᴛ sᴏɴɢ ɪɴ ᴘᴏsɪᴛɪᴏɴ... `{pos}`**",
                 )
             else:
                 title = songname
@@ -175,7 +171,7 @@ async def vplay(c: Client, m: Message):
                     amaze = MediumQualityVideo()
                 elif Q == 360:
                     amaze = LowQualityVideo()
-                await loser.edit("**🌹 ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                await loser.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                 await call_py.join_group_call(
                     chat_id,
                     AudioVideoPiped(
@@ -199,12 +195,12 @@ async def vplay(c: Client, m: Message):
                 await m.reply_photo(
                     photo=image,
                     reply_markup=buttons,
-                    caption=f"**🍃ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
+                    caption=f"**Naomi ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
                 )
         else:
             if len(m.command) < 2:
                 await m.reply(
-                    "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ👶**"
+                    "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ**"
                 )
             else:
                 loser = await c.send_message(chat_id, "🔍")
@@ -243,11 +239,11 @@ async def vplay(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=buttons,
-                                caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                                caption=f"**ɴᴇxᴛ sᴏɴɢ ɪɴ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ...`{pos}`**",
                             )
                         else:
                             try:
-                                await loser.edit("**🌹 ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                                await loser.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioVideoPiped(
@@ -271,7 +267,7 @@ async def vplay(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=buttons,
-                                    caption=f"**ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
+                                    caption=f"**Naomi ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
                                 )
                             except Exception as ep:
                                 await loser.delete()
@@ -280,7 +276,7 @@ async def vplay(c: Client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "🌷ʀᴇᴘʟʏ ᴛᴏ ᴀɴ **ᴠɪᴅᴇᴏ ғɪʟᴇ** ᴏʀ **ɢɪᴠᴇ sᴏᴍᴇᴛʜɪɴɢ ᴛᴇxᴛ ʙᴀʙʏ 👶**"
+                "ʀᴇᴘʟʏ ᴛᴏ ᴀɴ **ᴠɪᴅᴇᴏ ғɪʟᴇ** ᴏʀ **ɢɪᴠᴇ sᴏᴍᴇᴛʜɪɴɢ ᴛᴇxᴛ ʙᴀʙʏ **"
             )
         else:
             loser = await c.send_message(chat_id, "🔍")
@@ -319,11 +315,11 @@ async def vplay(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=buttons,
-                            caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                            caption=f"**ɴᴇxᴛ sᴏɴɢ ɪɴ ᴘᴏsɪᴛɪᴏɴ sᴇʀᴠᴇʀ...`{pos}`**",
                         )
                     else:
                         try:
-                            await loser.edit("**🌹 ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                            await loser.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioVideoPiped(
@@ -347,7 +343,7 @@ async def vplay(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=buttons,
-                                caption=f"**ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
+                                caption=f"**Naomi ʀᴏʙᴏᴛ ᴠɪᴅᴇᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
                             )
                         except Exception as ep:
                             await loser.delete()
@@ -395,20 +391,16 @@ async def vstream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
-            invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
-    except UserNotParticipant:
-        try:
-            invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
+                    invitelink = await c.export_chat_invite_link(chat_id)
+                except:
+                    await lel.edit(
+                        "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")
+                    return
+
+                try:
+                    await USER.join_chat(invitelink)
+                    await USER.send_message(
+                        message.chat.id, "** ɪᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴘʟᴀʏ 🖕 ...**")
         except UserAlreadyParticipant:
             pass
         except Exception as e:
@@ -422,7 +414,7 @@ async def vstream(c: Client, m: Message):
         if len(m.command) == 2:
             link = m.text.split(None, 1)[1]
             Q = 720
-            loser = await c.send_message(chat_id, "**ɪᴀᴍ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ sᴛʀᴇᴀᴍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..🍃**")
+            loser = await c.send_message(chat_id, "**ɪᴀᴍ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ sᴛʀᴇᴀᴍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..**")
         elif len(m.command) == 3:
             op = m.text.split(None, 1)[1]
             link = op.split(None, 1)[0]
@@ -434,7 +426,7 @@ async def vstream(c: Client, m: Message):
                 await m.reply(
                     "» __only 720, 480, 360 allowed__ \n💡 **ɴᴏᴡ sᴛʀᴇᴀᴍɪɴɢ ᴠɪᴅᴇᴏ ɪɴ 720p**"
                 )
-            loser = await c.send_message(chat_id, "**ɪᴀᴍ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ sᴛʀᴇᴀᴍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..🍃**")
+            loser = await c.send_message(chat_id, "**ɪᴀᴍ ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ sᴛʀᴇᴀᴍ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..**")
         else:
             await m.reply("**/vstream {link} {720/480/360}**")
 
@@ -464,7 +456,7 @@ async def vstream(c: Client, m: Message):
                 await m.reply_photo(
                     photo=f"{IMG_1}",
                     reply_markup=buttons,
-                    caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                    caption=f"**ɴᴇxᴛ sᴏɴɢ ɪɴ ᴘᴏsɪᴛɪᴏɴ...`{pos}`**",
                 )
             else:
                 if Q == 720:
@@ -500,7 +492,7 @@ async def vstream(c: Client, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_2}",
                         reply_markup=buttons,
-                        caption=f"**🔥ᴀᴍᴀʟᴀ ɴᴏᴡ sᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴀᴍᴀʟᴀ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ 🍃**",
+                        caption=f"**Naomi ɴᴏᴡ sᴛʀᴇᴀᴍɪɴɢ**",
                     )
                 except Exception as ep:
                     await loser.delete()

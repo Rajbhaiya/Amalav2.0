@@ -82,24 +82,20 @@ async def play(c: Client, m: Message):
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
             invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
-    except UserNotParticipant:
-        try:
-            invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/+"):
-                invitelink = invitelink.replace(
-                    "https://t.me/+", "https://t.me/joinchat/"
-                )
-            await user.join_chat(invitelink)
+                except:
+                    await lel.edit(
+                        "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")
+                    return
+
+                try:
+                    await USER.join_chat(invitelink)
+                    await USER.send_message(
+                        message.chat.id, "** ɪᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴘʟᴀʏ 🖕 ...**")
         except UserAlreadyParticipant:
             pass
         except Exception as e:
             return await m.reply_text(
-                f"🍃 **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`"
+                f"🔥 **ᴜsᴇʀʙᴏᴛ ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ**\n\n**ʀᴇᴀsᴏɴ**: `{e}`"
             )
     if replied:
         if replied.audio or replied.voice:
@@ -137,7 +133,7 @@ async def play(c: Client, m: Message):
                 await m.reply_photo(
                     photo=image,
                     reply_markup=buttons,
-                    caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                    caption=f"**ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ sᴇʀᴠᴇʀ...`{pos}`**",
                 )
             else:
                 try:
@@ -145,7 +141,7 @@ async def play(c: Client, m: Message):
                     userid = m.from_user.id
                     thumbnail = f"{IMG_5}"
                     image = await thumb(thumbnail, title, userid)
-                    await suhu.edit("🌹**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                    await suhu.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                     await call_py.join_group_call(
                         chat_id,
                         AudioPiped(
@@ -170,7 +166,7 @@ async def play(c: Client, m: Message):
                     await m.reply_photo(
                         photo=image,
                         reply_markup=buttons,
-                        caption=f"**🍃ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ....**",
+                        caption=f"**Naomi ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ....**",
                     )
                 except Exception as e:
                     await suhu.delete()
@@ -178,7 +174,7 @@ async def play(c: Client, m: Message):
         else:
             if len(m.command) < 2:
                 await m.reply(
-                    "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ👶...**"
+                    "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ...**"
                 )
             else:
                 suhu = await c.send_message(chat_id, "🔍")
@@ -215,11 +211,11 @@ async def play(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=buttons,
-                                caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷...**",
+                                caption=f"**ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ sᴇʀᴠᴇʀ...`{pos}`**",
                             )
                         else:
                             try:
-                                await suhu.edit("🌹 **ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                                await suhu.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioPiped(
@@ -244,7 +240,7 @@ async def play(c: Client, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=buttons,
-                                    caption=f"**🍃ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
+                                    caption=f"**Naomi ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
                                 )
                             except Exception as ep:
                                 await suhu.delete()
@@ -253,7 +249,7 @@ async def play(c: Client, m: Message):
     else:
         if len(m.command) < 2:
             await m.reply(
-                "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ👶..**"
+                "**✨ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ..**"
             )
         else:
             suhu = await c.send_message(chat_id, "🔍")
@@ -288,11 +284,11 @@ async def play(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=buttons,
-                            caption=f"**🍀ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs sᴇʀᴠᴇʀ... `{pos}` 🌷 ...**",
+                            caption=f"**ɴᴇxᴛ sᴏɴɢ ᴀᴛ ᴘᴏsɪᴛɪᴏɴ ɪɴ sᴇʀᴠᴇʀ...`{pos}`**",
                         )
                     else:
                         try:
-                            await suhu.edit("🌹 **ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
+                            await suhu.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioPiped(
@@ -315,7 +311,7 @@ async def play(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=buttons,
-                                caption=f"**🍃ᴀᴍᴀʟᴀ ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
+                                caption=f"**Naomi ʀᴏʙᴏᴛ ᴀᴜᴅɪᴏ ᴘʟᴀʏɪɴɢ ᴏɴ ᴘʀɪᴠᴀᴛᴇ sᴇʀᴠᴇʀ ...**",
                             )
                         except Exception as ep:
                             await suhu.delete()

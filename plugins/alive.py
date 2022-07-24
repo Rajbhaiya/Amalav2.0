@@ -38,31 +38,29 @@ async def _human_time_duration(seconds):
 @Client.on_message(command("start") & filters.private & ~filters.edited)
 async def start_(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4963e9019e0328075e980.jpg",
-        caption=f"""**👋🏻 ʜᴇʟʟᴏ {message.from_user.mention()} ɪᴀᴍ ᴀ ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ᴛʜᴇᴍᴇᴅ ʀᴏʙᴏᴛ ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ᴛᴇʟᴇɢʀᴀᴍ ᴡɪᴛʜ ʜɪɢʜ ǫᴜᴀʟɪᴛʏ
+        photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg",
+        caption=f"""**👋🏻 ʜᴇʟʟᴏ {message.from_user.mention()} ɪ'am Naomi Music ʀᴏʙᴏᴛ ɪ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ᴛᴇʟᴇɢʀᴀᴍ ᴡɪᴛʜ ʜɪɢʜ ǫᴜᴀʟɪᴛʏ
 
-ɢʀᴏᴜᴘs ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.. ᴀɴʏ ʜᴇʟᴘ ʏᴏᴜ ᴡᴀɴᴛ ʜɪᴛ ᴛʜᴇ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅ /help..
-
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters)**
+ɢʀᴏᴜᴘs ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.. ᴀɴʏ ʜᴇʟᴘ ʏᴏᴜ ᴡᴀɴᴛ ʜɪᴛ ᴛʜᴇ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅ /help.**
 """,
     reply_markup=InlineKeyboardMarkup( [[
-            InlineKeyboardButton("📚 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="command_list"), 
+            InlineKeyboardButton("🐲 ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs 🐲", callback_data="command_list"), 
             ],[
             InlineKeyboardButton("💬 ɪɴғᴏʀᴍᴀᴛɪᴏɴ", callback_data="info"), 
             ],[
             InlineKeyboardButton("🍃 sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{GROUP}"), 
             InlineKeyboardButton("📡 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{NETWORK}"), 
             ],[
-            InlineKeyboardButton("🍀 ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🍀", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+            InlineKeyboardButton("➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ]]
             ) 
         ) 
      
     
-@Client.on_message(commandpro(["/alive"]) & filters.group & ~filters.edited)
+@Client.on_message(commandpro(["/alive"]))
 async def alive(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4963e9019e0328075e980.jpg",
+        photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg",
         caption=f"""ʜᴇʟʟᴏ {message.from_user.mention()} ɪᴀᴍ ᴀʟɪᴠᴇ ɴᴏᴡ 👻""",
         reply_markup=InlineKeyboardMarkup(
             [
@@ -75,26 +73,10 @@ async def alive(client: Client, message: Message):
     )
 
 
-@Client.on_message(commandpro(["/repo", "#repo"]) & filters.group & ~filters.edited)
-async def repo(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://te.legra.ph/file/d65ba2c34eb7c058c1c32.jpg",
-        caption=f"""ᴄʜᴇᴄᴋ ɴᴏɴᴏ✨""", 
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "ᴄʜᴇᴄᴋ ɴᴏᴡ✨", url="https://github.com/Telugucoders/Amalav2.0")
-                ]
-            ]
-        ),
-    )
-
-
 @Client.on_message(command("help") & filters.private & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4963e9019e0328075e980.jpg",
+        photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg",
         caption=f""" ✨ **ʜᴇʟʟᴏ {message.from_user.mention()} !**\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ sᴇᴛᴜᴘ ᴛʜɪs ʙᴏᴛ? ʀᴇᴀᴅ sᴇᴛᴛɪɴɢ ᴜᴘ ᴛʜɪs ʙᴏᴛ ɪɴ ɢʀᴏᴜᴘ **\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ᴘʟᴀʏ ᴀᴜᴅɪᴏ 🔊? ʀᴇᴀᴅ ǫᴜɪᴄᴋ ᴜsᴇ ᴄᴏᴍᴍᴀɴᴅs **\n
@@ -113,7 +95,7 @@ async def help(client: Client, message: Message):
 @Client.on_message(command("ghelp") & filters.group & ~filters.edited)
 async def gelp(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4963e9019e0328075e980.jpg",
+        photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg",
         caption=f""" ✨ **ʜᴇʟʟᴏ {message.from_user.mention()} !**\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ sᴇᴛᴜᴘ ᴛʜɪs ʙᴏᴛ? ʀᴇᴀᴅ sᴇᴛᴛɪɴɢ ᴜᴘ ᴛʜɪs ʙᴏᴛ ɪɴ ɢʀᴏᴜᴘ **\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ᴘʟᴀʏ ᴀᴜᴅɪᴏ 🔊? ʀᴇᴀᴅ ǫᴜɪᴄᴋ ᴜsᴇ ᴄᴏᴍᴍᴀɴᴅs **\n
@@ -127,8 +109,7 @@ async def gelp(client: Client, message: Message):
             InlineKeyboardButton("ʀᴇsᴜᴍᴇ", callback_data="resume_list"), 
             InlineKeyboardButton("sᴛᴏᴘ", callback_data="stop_list"), 
             ],[
-            InlineKeyboardButton("ᴘʟᴀʏ", callback_data="play_list"), 
-            InlineKeyboardButton("sᴏᴜʀᴄᴇ", callback_data="source"), 
+            InlineKeyboardButton("ᴘʟᴀʏ", callback_data="play_list") 
             ],[
             InlineKeyboardButton("🗑 ʙɪɴ", callback_data="set_close"), 
             ]]
@@ -136,18 +117,17 @@ async def gelp(client: Client, message: Message):
         ) 
 
 
-@Client.on_message(command("uptime") & filters.group & ~filters.edited)
+@Client.on_message(command("uptime"))
 async def get_uptime(c: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/4963e9019e0328075e980.jpg", 
+        photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg", 
         caption=f""" 💞 **ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ʙᴏᴛ ᴜᴘᴛɪᴍᴇ**:\n
 ➠ **ᴜᴘᴛɪᴍᴇ:** **{uptime}**\n
 ➠ **ᴜsᴇʀ:** **{message.from_user.mention()}**\n
-➠ **sᴛᴀʀᴛ ᴛɪᴍᴇ:** **{START_TIME_ISO}**\n
-➠ **ᴘᴏᴡᴇʀᴇᴅ ʙʏ:** **[ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters)**""", 
+➠ **sᴛᴀʀᴛ ᴛɪᴍᴇ:** **{START_TIME_ISO}**""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -159,7 +139,7 @@ async def get_uptime(c: Client, message: Message):
     )
                  
 
-@Client.on_message(command("ping") & filters.group & ~filters.edited)
+@Client.on_message(command("ping"))
 async def ping_pong(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("**ᴘɪɴɢɪɴɢ...**")

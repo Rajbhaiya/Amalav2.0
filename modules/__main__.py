@@ -13,5 +13,4 @@ bot = Bot(
 )
 
 bot.start()
-run()
 idle()

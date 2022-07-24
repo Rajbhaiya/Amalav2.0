@@ -1,16 +1,10 @@
-from pyrogram import idle
-from pyrogram import Client as Bot
-from modules.config import API_ID, API_HASH, BOT_TOKEN
-from pytgcalls import PyTgCalls, idle
+import asyncio
+from pytgcalls import idle
+from modules.clientbot import call_py, bot, user
 
-    
-bot = Bot(
-    ":memory:",
-    API_ID,
-    API_HASH,
-    bot_token=BOT_TOKEN,
-    plugins=dict(root="plugins")
-)
 
-bot.start()
-idle()
+async def start_bot():
+    await bot.start()
+    print("[INFO]: BOT & UBOT CLIENT STARTED !!")
+    await call_py.start()
+    print("[INFO]: PY-TGCALLS CLIENT STARTED !!")

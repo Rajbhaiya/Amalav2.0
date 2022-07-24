@@ -5,7 +5,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
-from modules.clientbot.clientbot import Bot as client
+from modules.clientbot.clientbot import Bot as aditya
 from modules.config import SUDO_USERS
 
 @Client.on_message(filters.command(["bcast"]))

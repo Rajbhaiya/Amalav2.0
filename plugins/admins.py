@@ -41,11 +41,11 @@ async def skip(c: Client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await c.send_message(chat_id, "**ɴᴏᴛʜɪɴɢ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ 👶..**")
+            await c.send_message(chat_id, "**ɴᴏᴛʜɪɴɢ ᴛᴏ ᴘʟᴀʏ ʙᴀʙʏ..**")
         elif op == 1:
-            await c.send_message(chat_id, "ʏᴏᴜʀ ǫᴜᴇᴜᴇ ɪs ᴇᴍᴘᴛʏ ʙʏᴇ ɪᴀᴍ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ (ᴠᴄ)😌..")
+            await c.send_message(chat_id, "ʏᴏᴜʀ ǫᴜᴇᴜᴇ ɪs ᴇᴍᴘᴛʏ ʙʏᴇ ɪᴀᴍ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ😌..")
         elif op == 2:
-            await c.send_message(chat_id, "**ɪᴀᴍ ᴄʟᴇᴀʀɪɴɢ ʏᴏᴜʀ ǫᴜᴇᴜᴇs ʙʏᴇ ɪᴀᴍ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙᴀʙʏ....**")
+            await c.send_message(chat_id, "**ɪ ᴀᴍ ᴄʟᴇᴀʀɪɴɢ ʏᴏᴜʀ ǫᴜᴇᴜᴇs ʙʏᴇ ɪᴀᴍ ʟᴇᴀᴠɪɴɢ ᴠᴄ ʙᴀʙʏ....**")
         else:
             buttons = InlineKeyboardMarkup(
             [
@@ -66,11 +66,11 @@ async def skip(c: Client, m: Message):
                 chat_id,
                 photo=image,
                 reply_markup=buttons,
-                caption=f"🥳 **sᴋɪᴘᴘᴇᴅ ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴏɴɢ.\n╰ ᴍᴜsɪᴄ sᴋɪᴘᴘᴇᴅ ʙʏ: {m.from_user.mention()}**",
+                caption=f"**sᴋɪᴘᴘᴇᴅ ᴛᴏ ᴛʜᴇ ɴᴇxᴛ sᴏɴɢ.\n╰ ᴍᴜsɪᴄ sᴋɪᴘᴘᴇᴅ ʙʏ: {m.from_user.mention()}**",
             )
     else:
         skip = m.text.split(None, 1)[1]
-        OP = "🗑 **ɪᴀᴍ ʀᴇᴍᴏᴠᴇᴅ sᴏɴɢ ғʀᴏᴍ ǫᴜᴇᴜᴇ\n ᴛʜᴀɴᴋ ʏᴏᴜ ❤🌹:**"
+        OP = "🗑 **ɪᴀᴍ ʀᴇᴍᴏᴠᴇᴅ sᴏɴɢ ғʀᴏᴍ ǫᴜᴇᴜᴇ\n ᴛʜᴀɴᴋ ʏᴏᴜ ❤:**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
@@ -97,7 +97,7 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**ɪᴀᴍ ᴅɪsᴄᴏɴɴᴇᴄᴛᴇᴅ ғʀᴏᴍ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ**")
+            await m.reply("**ɪ ᴀᴍ ᴅɪsᴄᴏɴɴᴇᴄᴛᴇᴅ ғʀᴏᴍ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ**")
         except Exception as e:
             await m.reply(f"🚫 **ᴇʀʀᴏʀ:**\n\n`{e}`")
     else:

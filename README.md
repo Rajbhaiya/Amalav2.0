@@ -55,6 +55,7 @@
 
 **sᴏᴍᴇ ᴘᴇᴏᴘʟᴇ ᴛʜɪɴᴋ ᴛʜɪs ᴋᴀɴɢᴇᴅ ʙʏ ᴏᴛʜᴇʀ ʀᴇᴘᴏ ɴᴏ ʙᴀʙʏ ɪᴛs ʜᴀʀᴅ ᴡᴏʀᴋ ᴏғ** [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters)
 
+https://github.com/Rajbhaiya/Amalav2.0
 
 <h4>ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ᴅᴇᴘʟᴏʏ ᴏɴ ᴏᴋᴛᴇᴛᴏ!</h4>
 <p align="center"><a href="https://cloud.okteto.com/deploy?repository=https://github.com/Telugucoders/Amalav2.0"><img src="https://img.shields.io/badge/Deploy%20To%20Okteto-informational?style=for-the-badge&logo=Okteto" width="200""/></a>

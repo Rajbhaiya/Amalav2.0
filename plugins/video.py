@@ -96,7 +96,7 @@ async def vplay(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot) 
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
-                    invitelink = await c.export_chat_invite_link(chat_id)
+            invitelink = await c.export_chat_invite_link(chat_id)
                 except:
                     await lel.edit(
                         "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")
@@ -391,7 +391,7 @@ async def vstream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
-                    invitelink = await c.export_chat_invite_link(chat_id)
+            invitelink = await c.export_chat_invite_link(chat_id)
                 except:
                     await lel.edit(
                         "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")

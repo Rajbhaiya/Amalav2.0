@@ -1,18 +1,18 @@
-import asyncio
-from pytgcalls import idle
-from modules.clientbot import call_py, bot, user
+from pyrogram import idle
+from pyrogram import Client as Bot
+from modules.clientbot import run
+from modules.config import API_ID, API_HASH, BOT_TOKEN
+from pytgcalls import PyTgCalls, idle
 
+    
+bot = Bot(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="plugins")
+)
 
-async def start_bot():
-    await bot.start()
-    print("[INFO]: BOT & UBOT CLIENT STARTED !!")
-    await call_py.start()
-    print("[INFO]: PY-TGCALLS CLIENT STARTED !!")
-    await user.join_chat("telugucoders")
-    await user.join_chat("tgshadow_fighters")
-    await idle()
-    print("[INFO]: STOPPING BOT & USERBOT")
-    await bot.stop()
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
+bot.start()
+run()
+idle()

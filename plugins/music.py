@@ -82,15 +82,19 @@ async def play(c: Client, m: Message):
         if b.status == "kicked":
             await c.unban_chat_member(chat_id, ubot)
             invitelink = await c.export_chat_invite_link(chat_id)
-                except:
-                    await lel.edit(
-                        "* ᴍᴀᴋᴇ ᴍᴇ ᴀᴅᴍɪɴ ɪɴ ᴜʀ ɢʀᴏᴜᴘ 🙊...**")
-                    return
-
-                try:
-                    await USER.join_chat(invitelink)
-                    await USER.send_message(
-                        message.chat.id, "** ɪᴍ ʀᴇᴀᴅʏ ᴛᴏ ᴘʟᴀʏ 🖕 ...**")
+            if invitelink.startswith("https://t.me/+"):
+                invitelink = invitelink.replace(
+                    "https://t.me/+", "https://t.me/joinchat/"
+                )
+            await user.join_chat(invitelink)
+    except UserNotParticipant:
+        try:
+            invitelink = await c.export_chat_invite_link(chat_id)
+            if invitelink.startswith("https://t.me/"):
+                invitelink = invitelink.replace(
+                    "https://t.me/", "https://t.me/joinchat/"
+                )
+            await user.join_chat(invitelink
         except UserAlreadyParticipant:
             pass
         except Exception as e:

@@ -2,7 +2,6 @@ import os
 import aiofiles
 import aiohttp
 from PIL import Image, ImageDraw, ImageFont
-#remake by kagutsuchi
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -10,38 +9,42 @@ def changeImageSize(maxWidth, maxHeight, image):
     heightRatio = maxHeight / image.size[1]
     newWidth = int(widthRatio * image.size[0])
     newHeight = int(heightRatio * image.size[1])
-    return image.resize((newWidth, newHeight))
+    newImage = image.resize((newWidth, newHeight))
+    return newImage
 
 
-async def thumb(userid, title, views, duration, thumbnail):
+async def thumb(thumbnail, title, userid):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await aiofiles.open("background.png", mode="wb")
+                f = await aiofiles.open(f"resource/thumb{userid}.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-
-    image1 = Image.open("./background.png")
-    image2 = Image.open("resource/telugucoders.jpg")
+    image1 = Image.open(f"resource/thumb{userid}.png")
+    image2 = Image.open("resource/naomi.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save("temp.png")
-    img = Image.open("temp.png")
+    Image.alpha_composite(image5, image6).save(f"resource/temp{userid}.png")
+    img = Image.open(f"resource/temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("resource/font.otf", 32)
-    draw.text((190, 550), f"Title: {title[:50]} ...", (255, 255, 255), font=font)
-    draw.text((190, 590), f"Duration: {duration}", (255, 255, 255), font=font)
-    draw.text((190, 630), f"Views: {views}", (255, 255, 255), font=font)
+    font = ImageFont.truetype("resource/font.otf", 30)
+    font2 = ImageFont.truetype("resource/font.otf", 42)
     draw.text(
-        (190, 670),
-        f"Powered By: HENTAI UNIVERSE",
-        (255, 255, 255),
+        (25, 615),
+        f"{title[:20]}...",
+        fill="white",
+        font=font2,
+    )
+    draw.text(
+        (27, 543),
+        f"Now Playing",
+        fill="white",
         font=font,
     )
-    img.save("final.png")
-    os.remove("temp.png")
-    os.remove("background.png")
-    final = f"final.png"
-    return final
+    img.save(f"resource/final{userid}.png")
+    os.remove(f"resource/temp{userid}.png")
+    os.remove(f"resource/thumb{userid}.png")
+    final = f"resource/final{userid}.png"
+    return

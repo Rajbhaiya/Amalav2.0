@@ -90,10 +90,6 @@ async def play(c: Client, m: Message):
     except UserNotParticipant:
         try:
             invitelink = await c.export_chat_invite_link(chat_id)
-            if invitelink.startswith("https://t.me/"):
-                invitelink = invitelink.replace(
-                    "https://t.me/", "https://t.me/joinchat/"
-                )
             await user.join_chat(invitelink)
         except UserAlreadyParticipant:
             pass
@@ -122,7 +118,7 @@ async def play(c: Client, m: Message):
                 title = songname
                 userid = m.from_user.id
                 thumbnail = f"{IMG_5}"
-                image = await thumb(thumbnail, title, userid)
+                image = await thumb(userid, title, views, duration, thumbnail)
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 buttons = InlineKeyboardMarkup(
@@ -144,7 +140,7 @@ async def play(c: Client, m: Message):
                     title = songname
                     userid = m.from_user.id
                     thumbnail = f"{IMG_5}"
-                    image = await thumb(thumbnail, title, userid)
+                    image = await thumb(userid, title, views, duration, thumbnail)
                     await suhu.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                     await call_py.join_group_call(
                         chat_id,
@@ -193,7 +189,7 @@ async def play(c: Client, m: Message):
                     duration = search[2]
                     thumbnail = search[3]
                     userid = m.from_user.id
-                    image = await thumb(thumbnail, title, userid)
+                    image = await thumb(userid, title, views, duration, thumbnail)
                     coders, ytlink = await ytdl(url)
                     if coders == 0:
                         await suhu.edit(f"❌ ʏᴛ-ᴅʟ ɪssᴜᴇs ᴅᴇᴛᴇᴄᴛᴇᴅ\n\n» `{ytlink}`")

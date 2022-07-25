@@ -36,13 +36,10 @@ async def start_set(_, query: CallbackQuery):
    
 
 @Client.on_callback_query(filters.regex("command_list"))
-async def commands_set(_, query: CallbackQuery):
-    await query.answer("opening command list", show_alert=True) 
+async def commands_set(_, query: CallbackQuery): 
     await query.edit_message_text(
         f"""💗 ʜᴇʟʟᴏ [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) 
-➠ ʜᴇʟʟᴏ ɴᴀᴍsᴛʜᴇ ᴀɴɴᴀ ᴛʜɪs ɪs ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ɢᴜɪᴅᴇ ᴡʜᴀᴛ ᴄᴏᴍᴍᴀɴᴅ ʏᴏᴜ ɴᴇᴅᴅ sᴇʟᴇᴄᴛ ʜᴇʀᴇ.. 
-
-➠ ᴛʜɪs ʙᴏᴛ ᴍᴀᴅᴇ ᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters) 
+➠ ʜᴇʟʟᴏ ɴᴀᴍsᴛʜᴇ ᴀɴɴᴀ ᴛʜɪs ɪs ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ɢᴜɪᴅᴇ ᴡʜᴀᴛ ᴄᴏᴍᴍᴀɴᴅ ʏᴏᴜ ɴᴇᴅᴅ sᴇʟᴇᴄᴛ ʜᴇʀᴇ.
 """, 
     reply_markup=InlineKeyboardMarkup( [[
             InlineKeyboardButton("📚ɢᴇɴᴇʀᴀʟ ᴄᴏᴍᴍᴀɴᴅs", callback_data="general_list"), 
@@ -184,7 +181,7 @@ async def info(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ ʜᴇʟʟᴏ [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !
 
-➠ I'm Naomi Music Robot can play video or audio in your vc without any lag.\nHosted on private server.
+➠ I'm Naomi Music Robot, can play video or audio in your vc without any lag.I'm Hosted on a private server.\n\nSo why you waiting baby add me in your group.
 """, 
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("◁", callback_data="command_list")]]

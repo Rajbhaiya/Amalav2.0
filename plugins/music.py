@@ -1,4 +1,4 @@
-# ©Telugu Coders musi projects
+# ©Telugu Coders music projects
 
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant

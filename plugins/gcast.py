@@ -17,12 +17,12 @@ async def bcast(_, message: Message):
             await wtf.edit("**ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ 😒**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in Bot.iter_dialogs(Bot):
+        async for dialog in Bot.iter_dialogs():
             try:
                 await Bot.send_message(dialog.chat.id, lmao)
                 sent = sent+1
                 await wtf.edit(f"**ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ** \n\n**sᴇɴᴛ ɢʀᴏᴜᴘs:** `{sent}` Ƈɦɑᴛs \n**ғɑɩɭɘɗ ɪŋ:** {failed} ᴄʜᴀᴛs")
-                await asyncio.sleep(3)
+                await asyncio.sleep(2)
             except:
                 failed=failed+1
         await message.reply_text(f"`ʙʀᴏᴀᴅᴄᴀsᴛ sᴜᴄᴄᴇssғᴜʟʟ` \n\n**sɘŋᴛ Ƭø:** `{sent}` Ƈɦɑᴛs \n**ғɑɩɭɘɗ ɪŋ:** {failed} Ƈɦɑᴛs")

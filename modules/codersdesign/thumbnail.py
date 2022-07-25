@@ -47,4 +47,4 @@ async def thumb(thumbnail, title, userid):
     os.remove(f"resource/temp{userid}.png")
     os.remove(f"resource/thumb{userid}.png")
     final = f"resource/final{userid}.png"
-    return
+    return final

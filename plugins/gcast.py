@@ -2,7 +2,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
-from modules.clientbot.clientbot import Bot as aditya
+from modules.clientbot.clientbot import Bot
 from modules.config import SUDO_USERS
 
 @Client.on_message(filters.command(["bcast"]))
@@ -17,9 +17,9 @@ async def bcast(_, message: Message):
             await wtf.edit("**ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ 😒**")
             return
         lmao = message.reply_to_message.text
-        async for dialog in aditya.iter_dialogs():
+        async for dialog in Bot.iter_dialogs(Bot):
             try:
-                await aditya.send_message(dialog.chat.id, lmao)
+                await Bot.send_message(dialog.chat.id, lmao)
                 sent = sent+1
                 await wtf.edit(f"**ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ** \n\n**sᴇɴᴛ ɢʀᴏᴜᴘs:** `{sent}` Ƈɦɑᴛs \n**ғɑɩɭɘɗ ɪŋ:** {failed} ᴄʜᴀᴛs")
                 await asyncio.sleep(3)

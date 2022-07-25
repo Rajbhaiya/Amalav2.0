@@ -264,7 +264,7 @@ async def play(c: Client, m: Message):
                 duration = search[2]
                 thumbnail = search[3]
                 userid = m.from_user.id
-                image = await thumb(thumbnail, title, userid)
+                image = await thumb(userid, title, views, duration, thumbnail)
                 coders, ytlink = await ytdl(url)
                 if coders == 0:
                     await suhu.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")

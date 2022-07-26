@@ -80,7 +80,7 @@ async def help(client: Client, message: Message):
         caption=f""" ✨ **ʜᴇʟʟᴏ {message.from_user.mention()} !**\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ʜᴏᴡ ᴛᴏ sᴇᴛᴜᴘ ᴛʜɪs ʙᴏᴛ? ʀᴇᴀᴅ sᴇᴛᴛɪɴɢ ᴜᴘ ᴛʜɪs ʙᴏᴛ ɪɴ ɢʀᴏᴜᴘ **\n
 ➠ **ᴛᴏ ᴋɴᴏᴡ ᴘʟᴀʏ ᴀᴜᴅɪᴏ 🔊? ʀᴇᴀᴅ ǫᴜɪᴄᴋ ᴜsᴇ ᴄᴏᴍᴍᴀɴᴅs **\n
-➠ **ᴛᴏ ᴋɴᴏᴡ ᴇᴠᴇʀʏ sɪɴɢʟᴇ ᴄᴏᴍᴍᴀɴᴅ ᴏғ ʙᴏᴛ? ʀᴇᴀᴅ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs**\n """,
+➠ **ᴛᴏ ᴋɴᴏᴡ ᴇᴠᴇʀʏ sɪɴɢʟᴇ ᴄᴏᴍᴍᴀɴᴅ ᴏғ ʙᴏᴛ? ʀᴇᴀᴅ ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -124,7 +124,7 @@ async def get_uptime(c: Client, message: Message):
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_photo(
         photo=f"https://telegra.ph/file/bf8cb655deb38700560b5.jpg", 
-        caption=f""" 💞 **ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs ʙᴏᴛ ᴜᴘᴛɪᴍᴇ**:\n
+        caption=f""" 💞 **ʙᴏᴛ ᴜᴘᴛɪᴍᴇ**:\n
 ➠ **ᴜᴘᴛɪᴍᴇ:** **{uptime}**\n
 ➠ **ᴜsᴇʀ:** **{message.from_user.mention()}**\n
 ➠ **sᴛᴀʀᴛ ᴛɪᴍᴇ:** **{START_TIME_ISO}**""", 
@@ -144,4 +144,4 @@ async def ping_pong(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("**ᴘɪɴɢɪɴɢ...**")
     delta_ping = time() - start
-    await m_reply.edit_text("💝 **ᴘᴏɴɢ!!**\n" f"💖 **{delta_ping * 1000:.3f} ms**")
+    await m_reply.edit_text("💝 **ᴘᴏɴɢ!!**\n" f"**{delta_ping * 1000:.3f} ms**")

@@ -1,4 +1,3 @@
-#done
 import os
 import aiohttp
 from os import getenv

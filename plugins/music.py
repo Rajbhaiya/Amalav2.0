@@ -11,7 +11,7 @@ from modules.helpers.filters import command, other_filters
 from modules.clientbot.queues import QUEUE, add_to_queue
 from modules.clientbot import call_py, user
 from modules.clientbot.utils import bash
-from modules.config import BOT_USERNAME, IMG_5
+from modules.config import BOT_USERNAME, IMG_5, IMG_1, IMG_2
 from youtubesearchpython import VideosSearch
 
 
@@ -118,7 +118,7 @@ async def play(c: Client, m: Message):
                 title = songname
                 userid = m.from_user.id
                 thumbnail = f"{IMG_5}"
-                image = await thumb(thumbnail, title, userid)
+                image = f"{IMG_1}"
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 buttons = InlineKeyboardMarkup(

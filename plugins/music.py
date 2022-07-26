@@ -117,8 +117,8 @@ async def play(c: Client, m: Message):
             if chat_id in QUEUE:
                 title = songname
                 userid = m.from_user.id
-                thumbnail = f"{IMG_5}"
-                image = f"{IMG_1}"
+                thumbnail = f"{IMG_1}"
+                image = await thumb(thumbnail)
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 buttons = InlineKeyboardMarkup(

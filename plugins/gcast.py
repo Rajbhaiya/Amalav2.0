@@ -16,10 +16,10 @@ async def bcast(_, message: Message):
         if not message.reply_to_message:
             await wtf.edit("**ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ʙʀᴏᴀᴅᴄᴀsᴛ ᴍᴇssᴀɢᴇ 😒**")
             return
-        lmao = message.reply_to_message.text
+        rep = message.reply_to_message.text
         async for dialog in Bot.iter_dialogs():
             try:
-                await Bot.send_message(dialog.chat.id, lmao)
+                await Bot.send_message((dialog.chat.id), rep)
                 sent = sent+1
                 await wtf.edit(f"**ʙʀᴏᴀᴅᴄᴀsᴛɪɴɢ** \n\n**sᴇɴᴛ ɢʀᴏᴜᴘs:** `{sent}` Ƈɦɑᴛs \n**ғɑɩɭɘɗ ɪŋ:** {failed} ᴄʜᴀᴛs")
                 await asyncio.sleep(2)

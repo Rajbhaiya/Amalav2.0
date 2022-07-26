@@ -46,8 +46,8 @@ async def thumb(thumbnail, title, userid):
     )
     draw.text(
         (25, 635),
-        f"Powered by: **HENTAI UNIVERSE**",
-        fill="red",
+        f"Powered by: HENTAI UNIVERSE",
+        fill="#4863A0",
         font=font3,
     )    
     img.save(f"resource/final{userid}.png")

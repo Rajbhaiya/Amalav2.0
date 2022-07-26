@@ -33,19 +33,19 @@ async def thumb(thumbnail, title, userid):
     font2 = ImageFont.truetype("resource/font.otf", 42)
     font3 = ImageFont.truetype("resource/font.otf", 35)
     draw.text(
-        (25, 615),
+        (25, 555),
         f"{title[:20]}...",
         fill="white",
         font=font2,
     )
     draw.text(
-        (27, 543),
+        (27, 480),
         f"Now Playing",
         fill="white",
         font=font,
     )
     draw.text(
-        (25, 695),
+        (25, 635),
         f"Powered by: **HENTAI UNIVERSE**",
         fill="red",
         font=font3,

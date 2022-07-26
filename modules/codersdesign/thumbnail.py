@@ -31,8 +31,9 @@ async def thumb(thumbnail, title, userid):
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("resource/font.otf", 30)
     font2 = ImageFont.truetype("resource/font.otf", 42)
+    font3 = ImageFont.truetype("resource/font.otf", 35)
     draw.text(
-        (25, 615),
+        (25, 500),
         f"{title[:20]}...",
         fill="white",
         font=font2,
@@ -43,6 +44,12 @@ async def thumb(thumbnail, title, userid):
         fill="white",
         font=font,
     )
+    draw.text(
+        (25, 615),
+        f"Powered by: **HENTAI UNIVERSE**",
+        fill="red",
+        font=font3,
+    )    
     img.save(f"resource/final{userid}.png")
     os.remove(f"resource/temp{userid}.png")
     os.remove(f"resource/thumb{userid}.png")

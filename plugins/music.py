@@ -140,7 +140,7 @@ async def play(c: Client, m: Message):
                     title = songname
                     userid = m.from_user.id
                     thumbnail = f"{IMG_5}"
-                    image = await thumb(thumbnail, title, userid)
+                    image = IMG_5
                     await suhu.edit("**ʏᴏᴜʀ sᴏɴɢ ɪs ᴘʀᴏᴄᴇssɪɴɢ ᴏɴ ᴍʏ sᴇʀᴠᴇʀ**")
                     await call_py.join_group_call(
                         chat_id,
@@ -189,7 +189,7 @@ async def play(c: Client, m: Message):
                     duration = search[2]
                     thumbnail = search[3]
                     userid = m.from_user.id
-                    image = await thumb(thumbnail, title, userid)
+                    image = IMG_5
                     coders, ytlink = await ytdl(url)
                     if coders == 0:
                         await suhu.edit(f"❌ ʏᴛ-ᴅʟ ɪssᴜᴇs ᴅᴇᴛᴇᴄᴛᴇᴅ\n\n» `{ytlink}`")

@@ -1,7 +1,7 @@
 import re
 import sys
 from os import getenv
-
+import aiohttp
 from dotenv import load_dotenv
 from pyrogram import filters
     
@@ -23,6 +23,10 @@ IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 IMG_2 = getenv("IMG_2", "https://telegra.ph/file/6213d2673486beca02967.png")
 IMG_5 = getenv("IMG_5", "https://telegra.ph/file/d08d6474628be7571f013.png") 
 aiohttpsession = aiohttp.ClientSession()
+YOUTUBE_IMG_URL = getenv(
+    "YOUTUBE_IMG_URL",
+    "Youtube.jpeg",
+)
 
 def time_to_seconds(time):
     stringt = str(time)

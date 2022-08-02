@@ -41,7 +41,7 @@ SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"180:00")
 )
 if YOUTUBE_IMG_URL:
-    if YOUTUBE_IMG_URL != "assets/Youtube.jpeg":
+    if YOUTUBE_IMG_URL != "Youtube.jpeg":
         if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
             print(
                 "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"

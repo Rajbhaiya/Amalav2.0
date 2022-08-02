@@ -36,9 +36,9 @@ def time_to_seconds(time):
     )
 
 
-DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
+DURATION_LIMIT = int(time_to_seconds(f"60:00"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(
-    time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
+    time_to_seconds(f"180:00")
 )
 if YOUTUBE_IMG_URL:
     if YOUTUBE_IMG_URL != "assets/Youtube.jpeg":

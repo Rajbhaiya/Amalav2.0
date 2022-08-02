@@ -21,5 +21,11 @@ IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 IMG_2 = getenv("IMG_2", "https://telegra.ph/file/6213d2673486beca02967.png")
 IMG_5 = getenv("IMG_5", "https://telegra.ph/file/d08d6474628be7571f013.png") 
 aiohttpsession = aiohttp.ClientSession()
-
+if YOUTUBE_IMG_URL:
+    if YOUTUBE_IMG_URL != "assets/Youtube.jpeg":
+        if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
+            print(
+                "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"
+            )
+            sys.exit()
 
